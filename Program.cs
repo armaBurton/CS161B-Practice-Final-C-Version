@@ -11,7 +11,7 @@ namespace PracticeFinal{
             do{
                 Helpers.Menu();
                 Console.WriteLine();
-                Helpers.MenuOption("What would you like to do? ", ref option, Constants.MENU_ITEMS);
+                Helpers.MenuOption("What would you like to do? ", ref option, Constants.MENU_ITEMS.Count());
                 Helpers.HandleOption(itemList, option);
             }while(option != 5);
         }

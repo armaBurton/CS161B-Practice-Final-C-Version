@@ -48,6 +48,13 @@ namespace PracticeFinal.Cart{
             }
             Console.WriteLine();
         }
+
+        public static void RemoveItem(List<Item> itemList){
+            int menuOption = -1;
+
+            PrintList(itemList);
+            Helpers.MenuOption("Select a list item to remove: ", ref menuOption, itemList.Count());
+        }
     }
 
     public class Helpers{
@@ -57,7 +64,7 @@ namespace PracticeFinal.Cart{
             }
         }
 
-        public static void MenuOption(string prompt, ref int option, string[] menuItems){
+        public static void MenuOption(string prompt, ref int option, int count){
             int inputBuffer;
             char inputCharacter;
 
@@ -72,7 +79,7 @@ namespace PracticeFinal.Cart{
                     if(inputBuffer > 0 && inputBuffer < 6){
                         option = inputBuffer;
                     } else {
-                        Console.WriteLine($"Menu options are 1 through {menuItems.Count()}.");
+                        Console.WriteLine($"Menu options are 1 through {count}.");
                     }
                 } else {
                         Console.WriteLine("Invalid menu option");
@@ -86,7 +93,7 @@ namespace PracticeFinal.Cart{
                     Item.AddItem(itemList);
                     break;
                 case 2:
-                    Console.WriteLine("2");
+                    Item.RemoveItem(itemList);
                     break;
                 case 3:
                     Console.WriteLine("3");
