@@ -50,10 +50,18 @@ namespace PracticeFinal.Cart{
         }
 
         public static void RemoveItem(List<Item> itemList){
-            int menuOption = -1;
+            int removeItem = -1;
 
             PrintList(itemList);
-            Helpers.MenuOption("Select a list item to remove: ", ref menuOption, itemList.Count());
+            Helpers.MenuOption("Select a list item to remove: ", ref removeItem, itemList.Count());
+
+            removeItem--;
+
+            itemList.RemoveAt(removeItem);
+            Console.WriteLine();
+            Console.WriteLine("Updated Item list:\n");
+            PrintList(itemList);
+            Console.WriteLine();
         }
     }
 
