@@ -41,7 +41,7 @@ namespace PracticeFinal.Cart{
 
         public static void PrintList(List<Item> itemList){
             for (int i = 0;i < itemList.Count(); i++){
-                Console.Write($"Name: {itemList[i].Name}, ");
+                Console.Write($"0{i + 1} Name: {itemList[i].Name}, ");
                 Console.Write($"Quantity: {itemList[i].Quantity}, ");
                 Console.Write($"Cost: {itemList[i].Cost}, ");
                 Console.WriteLine($"Total: {itemList[i].Cost * itemList[i].Quantity}");
@@ -57,7 +57,7 @@ namespace PracticeFinal.Cart{
             }
         }
 
-        public static void MenuOption(string prompt, ref int option){
+        public static void MenuOption(string prompt, ref int option, string[] menuItems){
             int inputBuffer;
             char inputCharacter;
 
@@ -72,7 +72,7 @@ namespace PracticeFinal.Cart{
                     if(inputBuffer > 0 && inputBuffer < 6){
                         option = inputBuffer;
                     } else {
-                        Console.WriteLine($"Menu options are 1 through {Constants.MENU_ITEMS.Count()}.");
+                        Console.WriteLine($"Menu options are 1 through {menuItems.Count()}.");
                     }
                 } else {
                         Console.WriteLine("Invalid menu option");

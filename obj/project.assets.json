@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Arma\\000 Work\\code\\c#\\foolinAround\\proj\\proj.csproj",
+      "projectUniqueName": "C:\\Users\\Arma\\000 Work\\code\\c#\\pcc\\CS161B-Practice-Final-C-Version\\proj.csproj",
       "projectName": "proj",
-      "projectPath": "C:\\Users\\Arma\\000 Work\\code\\c#\\foolinAround\\proj\\proj.csproj",
+      "projectPath": "C:\\Users\\Arma\\000 Work\\code\\c#\\pcc\\CS161B-Practice-Final-C-Version\\proj.csproj",
       "packagesPath": "C:\\Users\\Arma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Arma\\000 Work\\code\\c#\\foolinAround\\proj\\obj\\",
+      "outputPath": "C:\\Users\\Arma\\000 Work\\code\\c#\\pcc\\CS161B-Practice-Final-C-Version\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
