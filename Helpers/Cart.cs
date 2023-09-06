@@ -63,6 +63,34 @@ namespace PracticeFinal.Cart{
             PrintList(itemList);
             Console.WriteLine();
         }
+
+        public static void ReplaceItem(List<Item> itemList){
+            int replaceItem = -1;
+            List<Item> tempItem = new List<Item>();
+
+            PrintList(itemList);
+            Helpers.MenuOption("Select a list item to replace: ", ref replaceItem, itemList.Count());
+            replaceItem--;
+            AddItem(tempItem);
+            itemList[replaceItem].Name = tempItem[0].Name;
+            itemList[replaceItem].Quantity = tempItem[0].Quantity;
+            itemList[replaceItem].Cost = tempItem[0].Cost;
+
+            Console.WriteLine("Updated Item List:\n");
+            PrintList(itemList);
+            Console.WriteLine();
+        }
+
+        public static void Quit(List<Item> itemList){
+            double? total = 0;
+            Console.WriteLine();
+            Console.WriteLine("Cart Contents:");
+            PrintList(itemList);
+            for (int i = 0; i < itemList.Count(); i++){
+                total = total + (itemList[i].Cost * itemList[i].Quantity);
+            }
+            Console.WriteLine($"Please pay: {total}.");
+        }
     }
 
     public class Helpers{
@@ -104,13 +132,13 @@ namespace PracticeFinal.Cart{
                     Item.RemoveItem(itemList);
                     break;
                 case 3:
-                    Console.WriteLine("3");
+                    Item.ReplaceItem(itemList);
                     break;
                 case 4:
                     Item.PrintList(itemList);
                     break;
                 case 5:
-                    Console.WriteLine("5");
+                    Item.Quit(itemList);
                     break;
                 default:
                     break;
